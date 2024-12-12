@@ -1,11 +1,14 @@
 package com.zephyros1938.engine.graph;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import com.zephyros1938.engine.Scene;
+import com.zephyros1938.engine.scene.Entity;
 
 import static com.zephyros1938.engine.graph.UniformsMap.*;
+import static com.zephyros1938.engine.scene.Entity.*;
 
 import static org.lwjgl.opengl.GL11.GL_TRIANGLES;
 import static org.lwjgl.opengl.GL11.GL_UNSIGNED_INT;
@@ -41,6 +44,7 @@ public class SceneRender {
     private void createUniforms() {
         uniforms_map = new UniformsMap(shader_program.getProgramId());
         uniforms_map.createUniform("projectionMatrix");
+        uniforms_map.createUniform("modelMatrix");
     }
 
     public void render(Scene scene) {
@@ -48,10 +52,17 @@ public class SceneRender {
 
         uniforms_map.setUniform("projectionMatrix", scene.getProjection().getProjectionMatrix());
 
-        scene.getMeshMap().values().forEach(mesh -> {
-            glBindVertexArray(mesh.getVaoId());
-            glDrawElements(GL_TRIANGLES, mesh.getNumVertices(), GL_UNSIGNED_INT, 0);
-        });
+        Collection<Model> models = scene.getModelMap().values();
+        for (Model model : models){
+            model.getMeshList().stream().forEach(mesh -> {
+                glBindVertexArray(mesh.getVaoId());
+                List<Entity> entities = model.getEntitiesList();
+                for(Entity entity : entities) {
+                    uniforms_map.setUniform("modelMatrix", entity.getModelMatrix());
+                    glDrawElements(GL_TRIANGLES, mesh.getNumVertices(), GL_UNSIGNED_INT, 0);
+                }
+            });
+        }
 
         glBindVertexArray(0);
 

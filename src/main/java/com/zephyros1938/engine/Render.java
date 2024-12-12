@@ -2,7 +2,9 @@ package com.zephyros1938.engine;
 
 import static org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT;
 import static org.lwjgl.opengl.GL11.GL_DEPTH_BUFFER_BIT;
+import static org.lwjgl.opengl.GL11.GL_DEPTH_TEST;
 import static org.lwjgl.opengl.GL11.glClear;
+import static org.lwjgl.opengl.GL11.glEnable;
 import static org.lwjgl.opengl.GL11.glViewport;
 
 import org.lwjgl.opengl.GL;
@@ -15,6 +17,7 @@ public class Render {
 
     public Render() {
         GL.createCapabilities();
+        glEnable(GL_DEPTH_TEST);
         scene_render = new SceneRender();
     }
 
