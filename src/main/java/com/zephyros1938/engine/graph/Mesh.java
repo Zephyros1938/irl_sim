@@ -1,6 +1,7 @@
 package com.zephyros1938.engine.graph;
 
 import java.nio.FloatBuffer;
+import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +10,7 @@ import org.lwjgl.system.MemoryStack;
 
 import static org.lwjgl.opengl.GL11.GL_FLOAT;
 import static org.lwjgl.opengl.GL15.GL_ARRAY_BUFFER;
+import static org.lwjgl.opengl.GL15.GL_ELEMENT_ARRAY_BUFFER;
 import static org.lwjgl.opengl.GL15.GL_STATIC_DRAW;
 import static org.lwjgl.opengl.GL15.glBindBuffer;
 import static org.lwjgl.opengl.GL15.glBufferData;
@@ -24,8 +26,9 @@ public class Mesh {
     private int vao_id;
     private List<Integer> vbo_id_list;
 
-    public Mesh(float[] positions, int num_vertices) {
+    public Mesh(float[] positions, float[] colors, int[] indices) {
         try (MemoryStack stack = MemoryStack.stackPush()) {
+            num_vertices = indices.length;
             this.num_vertices = num_vertices;
             vbo_id_list = new ArrayList<>();
 
@@ -41,6 +44,30 @@ public class Mesh {
             glBufferData(GL_ARRAY_BUFFER, positions_buffer, GL_STATIC_DRAW);
             glEnableVertexAttribArray(0);
             glVertexAttribPointer(0, 3, GL_FLOAT, false, 0, 0);
+
+            glBindBuffer(GL_ARRAY_BUFFER, 0);
+            glBindVertexArray(0);
+
+            // Colors VBO
+            vbo_id = glGenBuffers();
+            vbo_id_list.add(vbo_id);
+            FloatBuffer colors_buffer = stack.callocFloat(colors.length);
+            colors_buffer.put(0, colors);
+            glBindBuffer(GL_ARRAY_BUFFER, vbo_id);
+            glBufferData(GL_ARRAY_BUFFER, colors_buffer, GL_STATIC_DRAW);
+            glEnableVertexAttribArray(1);
+            glVertexAttribPointer(1, 3, GL_FLOAT, false, 0, 0);
+
+            glBindBuffer(GL_ARRAY_BUFFER, 0);
+            glBindVertexArray(0);
+
+            // Indices VBO
+            vbo_id = glGenBuffers();
+            vbo_id_list.add(vbo_id);
+            IntBuffer indices_buffer = stack.callocInt(indices.length);
+            indices_buffer.put(0, indices);
+            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vbo_id);
+            glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices_buffer, GL_STATIC_DRAW);
 
             glBindBuffer(GL_ARRAY_BUFFER, 0);
             glBindVertexArray(0);

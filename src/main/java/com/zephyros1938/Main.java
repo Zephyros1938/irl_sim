@@ -20,14 +20,13 @@ public class Main implements IAppLogic {
 
         WindowOptions window_options = new Window.WindowOptions();
 
-        if (args.length == 3){
+        if (args.length == 3) {
             name = args[0];
             window_options.width = Integer.parseInt(args[1]);
             window_options.height = Integer.parseInt(args[2]);
         }
-        
 
-        Engine game_engine = new Engine(name, window_options , main);
+        Engine game_engine = new Engine(name, window_options, main);
         game_engine.start();
     }
 
@@ -39,12 +38,22 @@ public class Main implements IAppLogic {
     @Override
     public void init(Window window, Scene scene, Render render) {
         float[] positions = new float[] {
-                0.0f, 0.5f, 0.0f,
+                -0.5f, 0.5f, 0.0f,
                 -0.5f, -0.5f, 0.0f,
-                0.5f, -0.5f, 0.0f
+                0.5f, -0.5f, 0.0f,
+                0.5f, 0.5f, 0.0f,
         };
-        Mesh mesh = new Mesh(positions, 3);
-        scene.addMesh("triangle", mesh);
+        float[] colors = new float[] {
+                0.5f, 0.0f, 0.0f,
+                0.0f, 0.5f, 0.0f,
+                0.0f, 0.0f, 0.5f,
+                0.0f, 0.5f, 0.5f,
+        };
+        int[] indices = new int[] {
+                0, 1, 3, 3, 1, 2,
+        };
+        Mesh mesh = new Mesh(positions, colors, indices);
+        scene.addMesh("quad", mesh);
     }
 
     @Override
