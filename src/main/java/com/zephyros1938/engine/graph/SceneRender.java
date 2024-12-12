@@ -20,11 +20,11 @@ public class SceneRender {
         List<ShaderProgram.ShaderModuleData> shader_module_data_list = new ArrayList<>();
         shader_module_data_list
                 .add(new ShaderProgram.ShaderModuleData(
-                        "/src/main/resources/shaders/default.vert".replace("/", File.separator),
+                        "src\\main\\resources\\shaders\\default.vert",
                         GL_VERTEX_SHADER));
         shader_module_data_list
                 .add(new ShaderProgram.ShaderModuleData(
-                        "/src/main/resources/shaders/default.frag".replace("/", File.separator),
+                        "src\\main\\resources\\shaders\\default.frag",
                         GL_FRAGMENT_SHADER));
         shader_program = new ShaderProgram(shader_module_data_list);
     }

@@ -1,18 +1,33 @@
 package com.zephyros1938;
 
+import java.util.Arrays;
+
 import com.zephyros1938.engine.Engine;
 import com.zephyros1938.engine.IAppLogic;
 import com.zephyros1938.engine.Render;
 import com.zephyros1938.engine.Scene;
 import com.zephyros1938.engine.Window;
+import com.zephyros1938.engine.Window.WindowOptions;
 import com.zephyros1938.engine.graph.Mesh;
 
 // Guide: https://ahbejarano.gitbook.io/lwjglgamedev/chapter-02
 
 public class Main implements IAppLogic {
     public static void main(String[] args) {
+        System.err.println(Arrays.toString(args));
         Main main = new Main();
-        Engine game_engine = new Engine("Test Window", new Window.WindowOptions(), main);
+        String name = "IRL SIM";
+
+        WindowOptions window_options = new Window.WindowOptions();
+
+        if (args.length == 3){
+            name = args[0];
+            window_options.width = Integer.parseInt(args[1]);
+            window_options.height = Integer.parseInt(args[2]);
+        }
+        
+
+        Engine game_engine = new Engine(name, window_options , main);
         game_engine.start();
     }
 
