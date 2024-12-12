@@ -10,7 +10,7 @@ import com.zephyros1938.engine.Window;
 import com.zephyros1938.engine.Window.WindowOptions;
 import com.zephyros1938.engine.graph.Mesh;
 
-// Guide: https://ahbejarano.gitbook.io/lwjglgamedev/chapter-02
+// Guide: https://ahbejarano.gitbook.io/lwjglgamedev/chapter-04
 
 public class Main implements IAppLogic {
     public static void main(String[] args) {
