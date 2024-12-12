@@ -2,7 +2,7 @@ package com.zephyros1938.engine;
 
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
-import static org.lwjgl.opengl.GL40.GL_TRUE;
+import static org.lwjgl.opengl.GL11.GL_TRUE;
 import static org.lwjgl.system.MemoryUtil.NULL;
 
 import java.util.concurrent.Callable;

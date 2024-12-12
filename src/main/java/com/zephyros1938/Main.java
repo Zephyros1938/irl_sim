@@ -5,6 +5,7 @@ import com.zephyros1938.engine.IAppLogic;
 import com.zephyros1938.engine.Render;
 import com.zephyros1938.engine.Scene;
 import com.zephyros1938.engine.Window;
+import com.zephyros1938.engine.graph.Mesh;
 
 // Guide: https://ahbejarano.gitbook.io/lwjglgamedev/chapter-02
 
@@ -22,7 +23,13 @@ public class Main implements IAppLogic {
 
     @Override
     public void init(Window window, Scene scene, Render render) {
-        // Nothing to be done yet
+        float[] positions = new float[] {
+                0.0f, 0.5f, 0.0f,
+                -0.5f, -0.5f, 0.0f,
+                0.5f, -0.5f, 0.0f
+        };
+        Mesh mesh = new Mesh(positions, 3);
+        scene.addMesh("triangle", mesh);
     }
 
     @Override
