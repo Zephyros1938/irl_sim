@@ -19,7 +19,7 @@ public class Engine {
         target_ups = opts.ups;
         this.app_logic = app_logic;
         render = new Render();
-        scene = new Scene();
+        scene = new Scene(window.getWidth(), window.getHeight());
         app_logic.init(window, scene, render);
         running = true;
     }

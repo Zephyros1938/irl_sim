@@ -45,9 +45,6 @@ public class Mesh {
             glEnableVertexAttribArray(0);
             glVertexAttribPointer(0, 3, GL_FLOAT, false, 0, 0);
 
-            glBindBuffer(GL_ARRAY_BUFFER, 0);
-            glBindVertexArray(0);
-
             // Colors VBO
             vbo_id = glGenBuffers();
             vbo_id_list.add(vbo_id);
@@ -57,9 +54,6 @@ public class Mesh {
             glBufferData(GL_ARRAY_BUFFER, colors_buffer, GL_STATIC_DRAW);
             glEnableVertexAttribArray(1);
             glVertexAttribPointer(1, 3, GL_FLOAT, false, 0, 0);
-
-            glBindBuffer(GL_ARRAY_BUFFER, 0);
-            glBindVertexArray(0);
 
             // Indices VBO
             vbo_id = glGenBuffers();
