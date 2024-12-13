@@ -1,3 +1,3 @@
-2024-12-12 21:24:57.928 INFO: Loading shader [src/main/resources/shaders/default.veart]
-2024-12-12 21:24:57.935 WARN: Could not load shader [src/main/resources/shaders/default.veart], attempting fallback load
-2024-12-12 21:24:57.936 ERROR: Could not load fallback for shader [src/main/resources/shaders/default.veart]
+2024-12-12 21:41:57.001 INFO: Loading shader [src/main/resources/shaders/default.aaaaaaaaa]
+2024-12-12 21:41:57.008 WARN: Could not load shader [src/main/resources/shaders/default.aaaaaaaaa], attempting fallback load
+2024-12-12 21:41:57.010 ERROR: Could not load fallback for shader [src/main/resources/shaders/default.aaaaaaaaa]

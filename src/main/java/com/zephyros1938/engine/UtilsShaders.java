@@ -3,7 +3,7 @@ package com.zephyros1938.engine;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ShaderUtils {
+public class UtilsShaders {
     // As of 12/12/2024 (Thursday, December 2024)
     private static final String FALLBACK_SHADER_VERT = "#version 330\nlayout (location=0) in vec3 position;layout (location=1) in vec3 color;out vec3 outColor;uniform mat4 projectionMatrix;uniform mat4 modelMatrix;void main(){gl_Position = projectionMatrix * modelMatrix * vec4(position, 1.0);outColor = color;}";
     private static final String FALLBACK_SHADER_FRAG = "#version 330\nin vec3 outColor;out vec4 fragColor;void main(){fragColor = vec4(outColor,1.0);}";

@@ -18,7 +18,7 @@ public class Utils {
             fs.close();
         } catch (IOException exception) {
             org.tinylog.Logger.warn(String.format("Could not load shader [%s], attempting fallback load", file_path));
-            String shader_fallback = ShaderUtils.getShaderFallback(file_path);
+            String shader_fallback = UtilsShaders.getShaderFallback(file_path);
 
             if (shader_fallback != null) {
                 org.tinylog.Logger.info(String.format("Fallback for shader [%s] loaded", file_path));
