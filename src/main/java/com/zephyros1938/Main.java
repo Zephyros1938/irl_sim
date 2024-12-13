@@ -197,7 +197,7 @@ public class Main implements IAppLogic {
 
     @Override
     public void update(Window window, Scene scene, long diffTimeMillis) {
-        rotation += 1.5;
+        rotation += 0.25;
         if (rotation > 360) {
             rotation = 0;
         }
