@@ -8,7 +8,6 @@ import static org.lwjgl.glfw.GLFW.glfwSetCursorPosCallback;
 import static org.lwjgl.glfw.GLFW.glfwSetMouseButtonCallback;
 
 import org.joml.Vector2f;
-import org.lwjgl.glfw.GLFW.*;
 
 public class MouseInput {
 

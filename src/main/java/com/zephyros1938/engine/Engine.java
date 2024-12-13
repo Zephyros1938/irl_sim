@@ -1,7 +1,7 @@
 package com.zephyros1938.engine;
 
 public class Engine {
-    public static final int TARGET_UPS = 30;
+    public static final int TARGET_UPS = 60;
     private final IAppLogic app_logic;
     private final Window window;
     private Render render;

@@ -25,8 +25,8 @@ import com.zephyros1938.engine.scene.Entity;
 
 public class Main implements IAppLogic {
 
-    private static final float MOUSE_SENSITIVITY = 0.1f;
-    private static final float MOVEMENT_SPEED = 0.005f;
+    private static final float MOUSE_SENSITIVITY = 0.05f;
+    private static final float MOVEMENT_SPEED = 0.001f;
 
     private Entity cube_entity;
     private float rotation;
@@ -181,9 +181,9 @@ public class Main implements IAppLogic {
         } else if (window.isKeyPressed(GLFW_KEY_D)) {
             camera.moveRight(move);
         }
-        if (window.isKeyPressed(GLFW_KEY_UP)) {
+        if (window.isKeyPressed(GLFW_KEY_SPACE)) {
             camera.moveUp(move);
-        } else if (window.isKeyPressed(GLFW_KEY_DOWN)) {
+        } else if (window.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
             camera.moveDown(move);
         }
 

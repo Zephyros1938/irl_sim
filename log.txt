@@ -1,7 +1,9 @@
-2024-12-13 20:05:43.611 DEBUG: com.zephyros1938.Main.main()	Window options set with name:[IRL SIM 320x240 (4:3)] width:[320] height:[240]
-2024-12-13 20:05:44.364 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/default.vert]
-2024-12-13 20:05:44.393 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/default.frag]
-2024-12-13 20:05:44.779 INFO: com.zephyros1938.engine.graph.Texture.generateTexture()	Generated texture id:[1] width:[4096] height:[4096]
-2024-12-13 20:05:44.944 INFO: com.zephyros1938.engine.graph.TextureCache.createTexture()	Caching texture [src/main/resources/models/default/default_texture.png]
-2024-12-13 20:05:44.946 INFO: com.zephyros1938.engine.graph.Mesh.<init>()	Created model with id:[1] positions:[60] texcoords:[40] indices:[36]
-2024-12-13 20:05:44.954 INFO: com.zephyros1938.engine.Engine.run()	Game engine started
+2024-12-13 21:27:25.157 DEBUG: com.zephyros1938.Main.main()	Window options set with name:[IRL SIM 1280x720 (16:9)] width:[1280] height:[720]
+2024-12-13 21:27:25.909 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/default.vert]
+2024-12-13 21:27:25.938 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/default.frag]
+2024-12-13 21:27:26.330 INFO: com.zephyros1938.engine.graph.Texture.generateTexture()	Generated texture id:[1] width:[4096] height:[4096]
+2024-12-13 21:27:26.494 INFO: com.zephyros1938.engine.graph.TextureCache.createTexture()	Caching texture [src/main/resources/models/default/default_texture.png]
+2024-12-13 21:27:26.496 INFO: com.zephyros1938.engine.graph.Mesh.<init>()	Created model with id:[1] positions:[60] texcoords:[40] indices:[36]
+2024-12-13 21:27:26.504 INFO: com.zephyros1938.engine.Engine.run()	Game engine started
+2024-12-13 21:27:46.438 INFO: com.zephyros1938.engine.Engine.cleanup()	Game engine cleanup started
+2024-12-13 21:27:46.467 INFO: com.zephyros1938.engine.Engine.run()	Game engine stopped
