@@ -64,6 +64,9 @@ public class Engine {
             if (target_fps <= 0 || delta_fps >= 1) {
                 window.getMouseInput().input();
                 app_logic.input(window, scene, now - initial_time);
+                render.render(window, scene);
+                delta_fps--;
+                window.update();
             }
             initial_time = now;
         }
