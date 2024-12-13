@@ -1,2 +1,2 @@
-2024-12-13 17:29:50.305 INFO: Loading shader [src/main/resources/shaders/default.vert]
-2024-12-13 17:29:50.341 INFO: Loading shader [src/main/resources/shaders/default.frag]
+2024-12-13 17:31:24.000 INFO: Loading shader [src/main/resources/shaders/default.vert]
+2024-12-13 17:31:24.034 INFO: Loading shader [src/main/resources/shaders/default.frag]

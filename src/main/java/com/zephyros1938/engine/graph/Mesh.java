@@ -52,7 +52,9 @@ public class Mesh {
             glBindBuffer(GL_ARRAY_BUFFER, vbo_id);
             glBufferData(GL_ARRAY_BUFFER, tex_coords_buffer, GL_STATIC_DRAW);
             glEnableVertexAttribArray(1);
-            glVertexAttribPointer(1, 2, GL_FLOAT, false, 0, 0);
+            glVertexAttribPointer(1, 2, GL_FLOAT, false, 0, 0); // MAKE SURE THE SIZE IS 2, I SPENT 30 MINUTES TRYING TO
+                                                                // MAP TEXTURE COORDS JUST TO FIND THAT SIZE WAS 3
+                                                                // INSTEAD OF 2.
 
             // Indices VBO
             vbo_id = glGenBuffers();
