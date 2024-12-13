@@ -55,7 +55,7 @@ public class Window {
         glfwSetFramebufferSizeCallback(window_handle, (window, w, h) -> resized(w, h));
 
         glfwSetErrorCallback((int error_code, long msg_ptr) -> {
-            System.err.println("Error code " + error_code + ", msg " + MemoryUtil.memUTF8(msg_ptr));
+            org.tinylog.Logger.error(String.format("Error code %s, msg %s", error_code, MemoryUtil.memUTF8(msg_ptr)));
         });
 
         glfwSetKeyCallback(window_handle, (window, key, scancode, action, mods) -> {
