@@ -7,12 +7,8 @@ import java.util.List;
 import com.zephyros1938.engine.Scene;
 import com.zephyros1938.engine.scene.Entity;
 
-import static com.zephyros1938.engine.graph.UniformsMap.*;
-import static com.zephyros1938.engine.scene.Entity.*;
-
 import static org.lwjgl.opengl.GL11.GL_TRIANGLES;
 import static org.lwjgl.opengl.GL11.GL_UNSIGNED_INT;
-import static org.lwjgl.opengl.GL11.glDrawArrays;
 import static org.lwjgl.opengl.GL11.glDrawElements;
 import static org.lwjgl.opengl.GL20.GL_FRAGMENT_SHADER;
 import static org.lwjgl.opengl.GL20.GL_VERTEX_SHADER;

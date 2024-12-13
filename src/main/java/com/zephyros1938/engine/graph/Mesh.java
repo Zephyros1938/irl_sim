@@ -29,7 +29,6 @@ public class Mesh {
     public Mesh(float[] positions, float[] colors, int[] indices) {
         try (MemoryStack stack = MemoryStack.stackPush()) {
             num_vertices = indices.length;
-            this.num_vertices = num_vertices;
             vbo_id_list = new ArrayList<>();
 
             vao_id = glGenVertexArrays();
