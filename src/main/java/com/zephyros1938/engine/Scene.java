@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.zephyros1938.engine.graph.Model;
+import com.zephyros1938.engine.graph.TextureCache;
 import com.zephyros1938.engine.scene.Entity;
 import com.zephyros1938.engine.scene.Projection;
 
@@ -11,10 +12,12 @@ public class Scene {
 
     private Map<String, Model> model_map;
     private Projection projection;
+    private TextureCache texture_cache;
 
     public Scene(int width, int height) {
         model_map = new HashMap<>();
         projection = new Projection(width, height);
+        texture_cache = new TextureCache();
     }
 
     public void addEntity(Entity entity) {
@@ -32,6 +35,10 @@ public class Scene {
 
     public void cleanup() {
         model_map.values().forEach(Model::cleanup);
+    }
+
+    public TextureCache getTextureCache() {
+        return texture_cache;
     }
 
     public Map<String, Model> getModelMap() {

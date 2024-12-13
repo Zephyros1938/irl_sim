@@ -15,7 +15,7 @@
             "name": "Main 320x240 (4:3)",
             "request": "launch",
             "mainClass": "com.zephyros1938.Main",
-            "projectName": "gltest",
+            "projectName": "irl_sim",
             "args": [
                 "IRL SIM 320x240 (4:3)",
                 "320",
@@ -27,7 +27,7 @@
             "name": "Main 800x600 (4:3)",
             "request": "launch",
             "mainClass": "com.zephyros1938.Main",
-            "projectName": "gltest",
+            "projectName": "irl_sim",
             "args": [
                 "IRL SIM 800x600 (4:3)",
                 "800",
@@ -39,7 +39,7 @@
             "name": "Main 1024x768 (4:3)",
             "request": "launch",
             "mainClass": "com.zephyros1938.Main",
-            "projectName": "gltest",
+            "projectName": "irl_sim",
             "args": [
                 "IRL SIM 1024x768 (4:3)",
                 "1024",
@@ -51,7 +51,7 @@
             "name": "Main 1280x720 (16:9)",
             "request": "launch",
             "mainClass": "com.zephyros1938.Main",
-            "projectName": "gltest",
+            "projectName": "irl_sim",
             "args": [
                 "IRL SIM 1280x720 (16:9)",
                 "1280",
@@ -63,7 +63,7 @@
             "name": "Main 1366x768 (16:9)",
             "request": "launch",
             "mainClass": "com.zephyros1938.Main",
-            "projectName": "gltest",
+            "projectName": "irl_sim",
             "args": [
                 "IRL SIM 1366x768 (16:9)",
                 "1366",
@@ -75,7 +75,7 @@
             "name": "Main 1920x1080 (16:9)",
             "request": "launch",
             "mainClass": "com.zephyros1938.Main",
-            "projectName": "gltest",
+            "projectName": "irl_sim",
             "args": [
                 "IRL SIM 1920x1080 (16:9)",
                 "1920",
@@ -87,7 +87,7 @@
             "name": "Main 2560x1440 (16:9)",
             "request": "launch",
             "mainClass": "com.zephyros1938.Main",
-            "projectName": "gltest",
+            "projectName": "irl_sim",
             "args": [
                 "IRL SIM 2560x1440 (16:9)",
                 "2560",
@@ -99,7 +99,7 @@
             "name": "Main 3840x2160 (16:9)",
             "request": "launch",
             "mainClass": "com.zephyros1938.Main",
-            "projectName": "gltest",
+            "projectName": "irl_sim",
             "args": [
                 "IRL SIM 3840x2160 (16:9)",
                 "3840",
@@ -111,7 +111,7 @@
             "name": "Main 3440x1440 (21:9)",
             "request": "launch",
             "mainClass": "com.zephyros1938.Main",
-            "projectName": "gltest",
+            "projectName": "irl_sim",
             "args": [
                 "IRL SIM 3440x1440 (21:9)",
                 "3440",
@@ -123,7 +123,7 @@
             "name": "Main 500x500 (1:1)",
             "request": "launch",
             "mainClass": "com.zephyros1938.Main",
-            "projectName": "gltest",
+            "projectName": "irl_sim",
             "args": [
                 "IRL SIM 500x500 (1:1)",
                 "500",
@@ -135,7 +135,7 @@
             "name": "Main 720x720 (1:1)",
             "request": "launch",
             "mainClass": "com.zephyros1938.Main",
-            "projectName": "gltest",
+            "projectName": "irl_sim",
             "args": [
                 "IRL SIM 720x720 (1:1)",
                 "720",
@@ -147,7 +147,7 @@
             "name": "Main 1080x1080 (1:1)",
             "request": "launch",
             "mainClass": "com.zephyros1938.Main",
-            "projectName": "gltest",
+            "projectName": "irl_sim",
             "args": [
                 "IRL SIM 1080x1080 (1:1)",
                 "1080",
@@ -159,7 +159,7 @@
             "name": "Main 1280x1024 (5:4)",
             "request": "launch",
             "mainClass": "com.zephyros1938.Main",
-            "projectName": "gltest",
+            "projectName": "irl_sim",
             "args": [
                 "IRL SIM 1280x1024 (5:4)",
                 "1280",
@@ -171,7 +171,7 @@
             "name": "Main",
             "request": "launch",
             "mainClass": "com.zephyros1938.Main",
-            "projectName": "gltest"
+            "projectName": "irl_sim"
         }
     ]
 }
