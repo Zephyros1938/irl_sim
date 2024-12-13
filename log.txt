@@ -1,2 +1,9 @@
-2024-12-13 19:09:59.561 INFO: Loading shader [src/main/resources/shaders/default.vert]
-2024-12-13 19:09:59.597 INFO: Loading shader [src/main/resources/shaders/default.frag]
+2024-12-13 20:00:02.831 DEBUG: Window options set with name:[IRL SIM 320x240 (4:3)] width:[320] height:[240]
+2024-12-13 20:00:03.557 INFO: Loading shader [src/main/resources/shaders/default.vert]
+2024-12-13 20:00:03.585 INFO: Loading shader [src/main/resources/shaders/default.frag]
+2024-12-13 20:00:03.978 INFO: Generated texture id:[1] width:[4096] height:[4096]
+2024-12-13 20:00:04.140 INFO: Caching texture [src/main/resources/models/default/default_texture.png]
+2024-12-13 20:00:04.143 INFO: Created model with id:[1] positions:[60] texcoords:[40] indices:[36]
+2024-12-13 20:00:04.150 INFO: Game engine started
+2024-12-13 20:00:04.774 INFO: Game engine cleanup started
+2024-12-13 20:00:04.851 INFO: Game engine stopped

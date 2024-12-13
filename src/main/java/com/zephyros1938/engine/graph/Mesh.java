@@ -66,6 +66,9 @@ public class Mesh {
 
             glBindBuffer(GL_ARRAY_BUFFER, 0);
             glBindVertexArray(0);
+            org.tinylog.Logger
+                    .info(String.format("Created model with id:[%s] positions:[%s] texcoords:[%s] indices:[%s]", vao_id,
+                            positions.length, tex_coords.length, indices.length));
         }
     }
 

@@ -19,6 +19,7 @@ public class TextureCache {
     }
 
     public Texture createTexture(String texture_path) {
+        org.tinylog.Logger.info(String.format("Caching texture [%s]", texture_path));
         return texture_map.computeIfAbsent(texture_path, Texture::new);
     }
 

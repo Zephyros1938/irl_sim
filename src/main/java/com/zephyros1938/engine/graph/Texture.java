@@ -54,6 +54,9 @@ public class Texture {
     private void generateTexture(int width, int height, ByteBuffer buf) {
         texture_id = glGenTextures();
 
+        org.tinylog.Logger
+                .info(String.format("Generated texture id:[%s] width:[%s] height:[%s]", texture_id, width, height));
+
         glBindTexture(GL_TEXTURE_2D, texture_id);
         glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);

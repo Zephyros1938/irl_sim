@@ -25,6 +25,7 @@ public class Engine {
     }
 
     private void cleanup() {
+        org.tinylog.Logger.info("Game engine cleanup started");
         app_logic.cleanup();
         render.cleanup();
         scene.cleanup();
@@ -43,6 +44,7 @@ public class Engine {
         float delta_fps = 0;
 
         long update_time = initial_time;
+        org.tinylog.Logger.info("Game engine started");
         while (running && !window.windowShouldClose()) {
             window.pollEvents();
 
@@ -72,6 +74,7 @@ public class Engine {
         }
 
         cleanup();
+        org.tinylog.Logger.info("Game engine stopped");
     }
 
     public void start() {

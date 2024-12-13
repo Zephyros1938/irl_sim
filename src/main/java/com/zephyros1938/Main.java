@@ -1,12 +1,9 @@
 package com.zephyros1938;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.joml.Vector2f;
-import org.joml.Vector3f;
-import org.joml.Vector4f;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -32,11 +29,9 @@ public class Main implements IAppLogic {
     private static final float MOVEMENT_SPEED = 0.005f;
 
     private Entity cube_entity;
-    private Vector4f displ_inc = new Vector4f();
     private float rotation;
 
     public static void main(String[] args) {
-        System.err.println(Arrays.toString(args));
         Main main = new Main();
         String name = "IRL SIM";
 
@@ -46,6 +41,8 @@ public class Main implements IAppLogic {
             name = args[0];
             window_options.width = Integer.parseInt(args[1]);
             window_options.height = Integer.parseInt(args[2]);
+            org.tinylog.Logger.debug(String.format("Window options set with name:[%s] width:[%s] height:[%s]", args[0],
+                    args[1], args[2]));
         }
 
         Engine game_engine = new Engine(name, window_options, main);

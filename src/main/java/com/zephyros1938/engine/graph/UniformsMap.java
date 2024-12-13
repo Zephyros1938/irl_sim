@@ -22,6 +22,8 @@ public class UniformsMap {
     public void createUniform(String uniform_name) {
         int uniform_location = glGetUniformLocation(program_id, uniform_name);
         if (uniform_location < 0) {
+            org.tinylog.Logger.error(
+                    String.format("Could not find uniform [%s] in shader program [%s]", uniform_name, program_id));
             throw new RuntimeException(
                     "Could not find uniform [" + uniform_name + "] in shader program [" + program_id + "]");
         }
@@ -31,6 +33,7 @@ public class UniformsMap {
     private int getUniformLocation(String uniform_name) {
         Integer location = uniforms.get(uniform_name);
         if (location == null) {
+            org.tinylog.Logger.error(String.format("Could not find uniform [%s]", uniform_name));
             throw new RuntimeException(String.format("Could not find uniform [%s]", uniform_name));
         }
 

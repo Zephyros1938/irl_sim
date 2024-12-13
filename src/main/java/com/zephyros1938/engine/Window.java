@@ -126,6 +126,7 @@ public class Window {
         try {
             resize_function.call();
         } catch (Exception excp) {
+            org.tinylog.Logger.error(String.format("Error calling resize callback. Exception : %s", excp.getMessage()));
             System.err.println("Error calling resize callback " + excp.getMessage());
         }
     }
