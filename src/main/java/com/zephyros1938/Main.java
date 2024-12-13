@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.joml.Vector2f;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 
@@ -11,6 +12,7 @@ import static org.lwjgl.glfw.GLFW.*;
 
 import com.zephyros1938.engine.Engine;
 import com.zephyros1938.engine.IAppLogic;
+import com.zephyros1938.engine.MouseInput;
 import com.zephyros1938.engine.Render;
 import com.zephyros1938.engine.Scene;
 import com.zephyros1938.engine.Window;
@@ -19,11 +21,15 @@ import com.zephyros1938.engine.graph.Material;
 import com.zephyros1938.engine.graph.Mesh;
 import com.zephyros1938.engine.graph.Model;
 import com.zephyros1938.engine.graph.Texture;
+import com.zephyros1938.engine.scene.Camera;
 import com.zephyros1938.engine.scene.Entity;
 
 // Guide: https://ahbejarano.gitbook.io/lwjglgamedev/chapter-04
 
 public class Main implements IAppLogic {
+
+    private static final float MOUSE_SENSITIVITY = 0.1f;
+    private static final float MOVEMENT_SPEED = 0.005f;
 
     private Entity cube_entity;
     private Vector4f displ_inc = new Vector4f();
@@ -147,7 +153,8 @@ public class Main implements IAppLogic {
                 16, 18, 19, 17, 16, 19,
                 // Back face
                 4, 6, 7, 5, 4, 7, };
-        Texture texture = scene.getTextureCache().createTexture("src/main/resources/models/default/default_texture.png");
+        Texture texture = scene.getTextureCache()
+                .createTexture("src/main/resources/models/default/default_texture.png");
         Material material = new Material();
         material.setTexturePath(texture.getTexturePath());
         List<Material> material_list = new ArrayList<>();
@@ -165,35 +172,30 @@ public class Main implements IAppLogic {
 
     @Override
     public void input(Window window, Scene scene, long diffTimeMillis) {
-        displ_inc.zero();
-        if (window.isKeyPressed(GLFW_KEY_UP)) {
-            displ_inc.y = -1;
-        } else if (window.isKeyPressed(GLFW_KEY_DOWN)) {
-            displ_inc.y = 1;
-        }
-        if (window.isKeyPressed(GLFW_KEY_LEFT)) {
-            displ_inc.x = 1;
-        } else if (window.isKeyPressed(GLFW_KEY_RIGHT)) {
-            displ_inc.x = -1;
+        float move = diffTimeMillis * MOVEMENT_SPEED;
+        Camera camera = scene.getCamera();
+        if (window.isKeyPressed(GLFW_KEY_W)) {
+            camera.moveForward(move);
+        } else if (window.isKeyPressed(GLFW_KEY_S)) {
+            camera.moveBackwards(move);
         }
         if (window.isKeyPressed(GLFW_KEY_A)) {
-            displ_inc.z = -1;
-        } else if (window.isKeyPressed(GLFW_KEY_Q)) {
-            displ_inc.z = 1;
+            camera.moveLeft(move);
+        } else if (window.isKeyPressed(GLFW_KEY_D)) {
+            camera.moveRight(move);
         }
-        if (window.isKeyPressed(GLFW_KEY_Z)) {
-            displ_inc.w = -1;
-        } else if (window.isKeyPressed(GLFW_KEY_X)) {
-            displ_inc.w = 1;
+        if (window.isKeyPressed(GLFW_KEY_UP)) {
+            camera.moveUp(move);
+        } else if (window.isKeyPressed(GLFW_KEY_DOWN)) {
+            camera.moveDown(move);
         }
 
-        displ_inc.mul(diffTimeMillis / 1000.f);
-
-        Vector3f entity_pos = cube_entity.getPosition();
-        cube_entity.setPosition(displ_inc.x + entity_pos.x, displ_inc.y + entity_pos.y, displ_inc.z + entity_pos.z);
-        cube_entity.setScale(cube_entity.getScale() + displ_inc.w);
-        cube_entity.updateModelMatrix();
-
+        MouseInput mouse_input = window.getMouseInput();
+        if (mouse_input.isRightButtonPressed()) {
+            Vector2f displ_vec = mouse_input.getDisplVec();
+            camera.addRotation((float) Math.toRadians(-displ_vec.x * MOUSE_SENSITIVITY),
+                    (float) Math.toRadians(-displ_vec.y * MOUSE_SENSITIVITY));
+        }
     }
 
     @Override

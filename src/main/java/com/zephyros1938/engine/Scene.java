@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.zephyros1938.engine.graph.Model;
 import com.zephyros1938.engine.graph.TextureCache;
+import com.zephyros1938.engine.scene.Camera;
 import com.zephyros1938.engine.scene.Entity;
 import com.zephyros1938.engine.scene.Projection;
 
@@ -13,11 +14,13 @@ public class Scene {
     private Map<String, Model> model_map;
     private Projection projection;
     private TextureCache texture_cache;
+    private Camera camera;
 
     public Scene(int width, int height) {
         model_map = new HashMap<>();
         projection = new Projection(width, height);
         texture_cache = new TextureCache();
+        camera = new Camera();
     }
 
     public void addEntity(Entity entity) {
@@ -47,6 +50,10 @@ public class Scene {
 
     public Projection getProjection() {
         return projection;
+    }
+
+    public Camera getCamera() {
+        return camera;
     }
 
     public void resize(int width, int height) {

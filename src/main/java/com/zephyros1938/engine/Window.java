@@ -16,6 +16,7 @@ public class Window {
     private int height;
     private Callable<Void> resize_function;
     private int width;
+    private MouseInput mouse_input;
 
     public Window(String title, WindowOptions opts, Callable<Void> resize_function) {
         this.resize_function = resize_function;
@@ -76,6 +77,7 @@ public class Window {
         glfwGetFramebufferSize(window_handle, arr_width, arr_height);
         width = arr_width[0];
         height = arr_height[0];
+        mouse_input = new MouseInput(window_handle);
     }
 
     public void keyCallBack(int key, int action) {
@@ -104,6 +106,10 @@ public class Window {
 
     public long getWindowHandle() {
         return window_handle;
+    }
+
+    public MouseInput getMouseInput() {
+        return mouse_input;
     }
 
     public boolean isKeyPressed(int key_code) {
