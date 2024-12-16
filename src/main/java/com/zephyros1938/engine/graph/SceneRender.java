@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import com.zephyros1938.engine.Scene;
 import com.zephyros1938.engine.scene.Entity;
+import com.zephyros1938.engine.scene.Scene;
 
 import static org.lwjgl.opengl.GL30.*;
 
@@ -18,11 +18,11 @@ public class SceneRender {
         List<ShaderProgram.ShaderModuleData> shader_module_data_list = new ArrayList<>();
         shader_module_data_list
                 .add(new ShaderProgram.ShaderModuleData(
-                        "src/main/resources/shaders/default.vert",
+                        "resources/shaders/default.vert",
                         GL_VERTEX_SHADER));
         shader_module_data_list
                 .add(new ShaderProgram.ShaderModuleData(
-                        "src/main/resources/shaders/default.frag",
+                        "resources/shaders/default.frag",
                         GL_FRAGMENT_SHADER));
         shader_program = new ShaderProgram(shader_module_data_list);
         createUniforms();

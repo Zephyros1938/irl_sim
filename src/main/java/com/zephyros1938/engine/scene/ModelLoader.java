@@ -37,6 +37,7 @@ public class ModelLoader {
     }
 
     public static Model loadModel(String model_id, String model_path, TextureCache texture_cache, int flags) {
+        model_path = "src" + File.separator + "main" + File.separator + model_path;
         org.tinylog.Logger.info(String.format("Loading model with path [%s]", model_path));
         File file = new File(model_path);
         if(!file.exists()) {

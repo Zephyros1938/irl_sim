@@ -1,13 +1,11 @@
-package com.zephyros1938.engine;
+package com.zephyros1938.engine.scene;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import com.zephyros1938.engine.IGuiInstance;
 import com.zephyros1938.engine.graph.Model;
 import com.zephyros1938.engine.graph.TextureCache;
-import com.zephyros1938.engine.scene.Camera;
-import com.zephyros1938.engine.scene.Entity;
-import com.zephyros1938.engine.scene.Projection;
 
 public class Scene {
 
@@ -15,6 +13,7 @@ public class Scene {
     private Projection projection;
     private TextureCache texture_cache;
     private Camera camera;
+    private IGuiInstance gui_instance;
 
     public Scene(int width, int height) {
         model_map = new HashMap<>();
@@ -54,6 +53,14 @@ public class Scene {
 
     public Camera getCamera() {
         return camera;
+    }
+
+    public IGuiInstance getGuiInstance() {
+        return gui_instance;
+    }
+
+    public void setGuiInstance(IGuiInstance gui_instance) {
+        this.gui_instance = gui_instance;
     }
 
     public void resize(int width, int height) {

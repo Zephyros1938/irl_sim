@@ -1,5 +1,7 @@
 package com.zephyros1938.engine;
 
+import com.zephyros1938.engine.scene.Scene;
+
 public class Engine {
     public static final int TARGET_UPS = 60;
     private final IAppLogic app_logic;
@@ -18,7 +20,7 @@ public class Engine {
         target_fps = opts.fps;
         target_ups = opts.ups;
         this.app_logic = app_logic;
-        render = new Render();
+        render = new Render(window);
         scene = new Scene(window.getWidth(), window.getHeight());
         app_logic.init(window, scene, render);
         running = true;
@@ -33,7 +35,10 @@ public class Engine {
     }
 
     private void resize() {
-        // Nothing here yet
+        int width = window.getWidth();
+        int height = window.getHeight();
+        scene.resize(width, height);
+        render.resize(width, height);
     }
 
     private void run() {
@@ -45,6 +50,7 @@ public class Engine {
 
         long update_time = initial_time;
         org.tinylog.Logger.info("Game engine started");
+        IGuiInstance i_gui_instance = scene.getGuiInstance();
         while (running && !window.windowShouldClose()) {
             window.pollEvents();
 
@@ -53,7 +59,9 @@ public class Engine {
             delta_fps = (now - initial_time) / time_r;
 
             if (target_fps <= 0 || delta_fps >= 1) {
-                app_logic.input(window, scene, now - initial_time);
+                window.getMouseInput().input();
+                boolean input_consumed = i_gui_instance != null ? i_gui_instance.handleGuiInput(scene, window) : false;
+                app_logic.input(window, scene, now - initial_time, input_consumed);
             }
 
             if (delta_update >= 1) {
@@ -64,8 +72,6 @@ public class Engine {
             }
 
             if (target_fps <= 0 || delta_fps >= 1) {
-                window.getMouseInput().input();
-                app_logic.input(window, scene, now - initial_time);
                 render.render(window, scene);
                 delta_fps--;
                 window.update();

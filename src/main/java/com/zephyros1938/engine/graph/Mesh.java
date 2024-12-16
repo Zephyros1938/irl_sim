@@ -1,7 +1,5 @@
 package com.zephyros1938.engine.graph;
 
-import java.nio.FloatBuffer;
-import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
 

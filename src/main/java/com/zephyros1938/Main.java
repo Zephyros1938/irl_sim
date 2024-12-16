@@ -6,19 +6,24 @@ import static org.lwjgl.glfw.GLFW.*;
 
 import com.zephyros1938.engine.Engine;
 import com.zephyros1938.engine.IAppLogic;
+import com.zephyros1938.engine.IGuiInstance;
 import com.zephyros1938.engine.MouseInput;
 import com.zephyros1938.engine.Render;
-import com.zephyros1938.engine.Scene;
 import com.zephyros1938.engine.Window;
 import com.zephyros1938.engine.Window.WindowOptions;
 import com.zephyros1938.engine.graph.Model;
 import com.zephyros1938.engine.scene.Camera;
 import com.zephyros1938.engine.scene.Entity;
 import com.zephyros1938.engine.scene.ModelLoader;
+import com.zephyros1938.engine.scene.Scene;
+
+import imgui.ImGui;
+import imgui.ImGuiIO;
+import imgui.flag.ImGuiCond;
 
 // Guide: https://ahbejarano.gitbook.io/lwjglgamedev/chapter-04
 
-public class Main implements IAppLogic {
+public class Main implements IAppLogic, IGuiInstance {
 
     private static final float MOUSE_SENSITIVITY = 0.04f;
     private static final float MOVEMENT_SPEED = 0.001f;
@@ -51,17 +56,43 @@ public class Main implements IAppLogic {
 
     @Override
     public void init(Window window, Scene scene, Render render) {
-        Model cube_model = ModelLoader.loadModel("cube_model", "src/main/resources/models/teapot/teapot.obj", scene.getTextureCache());
+        Model cube_model = ModelLoader.loadModel("cube_model", "resources/models/cube/cube.obj", scene.getTextureCache());
         scene.addModel(cube_model);
 
         cube_entity = new Entity("cube_entity", cube_model.getId());
         cube_entity.setPosition(0, 0, -2);
         cube_entity.setScale(0.1f);
         scene.addEntity(cube_entity);
+
+        scene.setGuiInstance(this);
     }
 
     @Override
-    public void input(Window window, Scene scene, long diffTimeMillis) {
+    public void drawGui() {
+        ImGui.newFrame();
+        ImGui.setNextWindowPos(0,0,ImGuiCond.Always);
+        ImGui.showDemoWindow();
+        ImGui.endFrame();
+        ImGui.render();
+    }
+
+    @Override
+    public boolean handleGuiInput(Scene scene, Window window) {
+        ImGuiIO im_gui_io = ImGui.getIO();
+        MouseInput mouse_input = window.getMouseInput();
+        Vector2f mouse_pos = mouse_input.getCurrentPos();
+        im_gui_io.addMousePosEvent(mouse_pos.x, mouse_pos.y);
+        im_gui_io.addMouseButtonEvent(0, mouse_input.isLeftButtonPressed());
+        im_gui_io.addMouseButtonEvent(1, mouse_input.isRightButtonPressed());
+
+        return im_gui_io.getWantCaptureMouse() || im_gui_io.getWantCaptureKeyboard();
+    }
+
+    @Override
+    public void input(Window window, Scene scene, long diffTimeMillis, boolean input_consumed) {
+        if(input_consumed){
+            return;
+        }
         float move = diffTimeMillis * MOVEMENT_SPEED;
         Camera camera = scene.getCamera();
         if (window.isKeyPressed(GLFW_KEY_W)) {

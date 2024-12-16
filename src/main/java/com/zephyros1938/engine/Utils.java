@@ -1,5 +1,6 @@
 package com.zephyros1938.engine;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -11,6 +12,7 @@ public class Utils {
 
     public static String readFile(String file_path) {
         String str;
+        file_path = "src" + File.separator + "main" + File.separator + file_path;
         org.tinylog.Logger.info(String.format("Loading shader [%s]", file_path));
         try {
             FileInputStream fs = new FileInputStream(Paths.get("", file_path.split("/")).toFile());
