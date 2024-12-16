@@ -25,7 +25,7 @@ import imgui.flag.ImGuiCond;
 
 public class Main implements IAppLogic, IGuiInstance {
 
-    private static final float MOUSE_SENSITIVITY = 0.04f;
+    private static final float MOUSE_SENSITIVITY = 0.075f;
     private static final float MOVEMENT_SPEED = 0.001f;
 
     private Entity cube_entity;

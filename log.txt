@@ -1,14 +1,14 @@
-2024-12-16 21:37:14.592 DEBUG: com.zephyros1938.Main.main()	Window options set with name:[IRL SIM 1280x720 (16:9)] width:[1280] height:[720]
-2024-12-16 21:37:16.288 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/default.vert]
-2024-12-16 21:37:16.359 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/default.frag]
-2024-12-16 21:37:16.390 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/gui.vert]
-2024-12-16 21:37:16.397 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/gui.frag]
-2024-12-16 21:37:16.611 INFO: com.zephyros1938.engine.graph.Texture.generateTexture()	Generated texture id:[1] width:[512] height:[64]
-2024-12-16 21:37:18.137 INFO: com.zephyros1938.engine.graph.Texture.generateTexture()	Generated texture id:[2] width:[4096] height:[4096]
-2024-12-16 21:37:19.333 INFO: com.zephyros1938.engine.scene.ModelLoader.loadModel()	Loading model with path [src/main/resources/models/cube/cube.obj]
-2024-12-16 21:37:19.674 INFO: com.zephyros1938.engine.graph.TextureCache.createTexture()	Caching texture [src/main/resources/models/cube/cube.png]
-2024-12-16 21:37:19.694 INFO: com.zephyros1938.engine.graph.Texture.generateTexture()	Generated texture id:[3] width:[1024] height:[1024]
-2024-12-16 21:37:19.739 INFO: com.zephyros1938.engine.graph.Mesh.<init>()	Created model with id:[2] positions:[72] texcoords:[48] indices:[36]
-2024-12-16 21:37:19.750 INFO: com.zephyros1938.engine.Engine.run()	Game engine started
-2024-12-16 21:38:27.125 INFO: com.zephyros1938.engine.Engine.cleanup()	Game engine cleanup started
-2024-12-16 21:38:27.193 INFO: com.zephyros1938.engine.Engine.run()	Game engine stopped
+2024-12-16 21:41:53.868 DEBUG: com.zephyros1938.Main.main()	Window options set with name:[IRL SIM 1280x720 (16:9)] width:[1280] height:[720]
+2024-12-16 21:41:54.643 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/default.vert]
+2024-12-16 21:41:54.676 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/default.frag]
+2024-12-16 21:41:54.682 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/gui.vert]
+2024-12-16 21:41:54.683 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/gui.frag]
+2024-12-16 21:41:54.789 INFO: com.zephyros1938.engine.graph.Texture.generateTexture()	Generated texture id:[1] width:[512] height:[64]
+2024-12-16 21:41:55.180 INFO: com.zephyros1938.engine.graph.Texture.generateTexture()	Generated texture id:[2] width:[4096] height:[4096]
+2024-12-16 21:41:55.340 INFO: com.zephyros1938.engine.scene.ModelLoader.loadModel()	Loading model with path [src/main/resources/models/cube/cube.obj]
+2024-12-16 21:41:55.492 INFO: com.zephyros1938.engine.graph.TextureCache.createTexture()	Caching texture [src/main/resources/models/cube/cube.png]
+2024-12-16 21:41:55.512 INFO: com.zephyros1938.engine.graph.Texture.generateTexture()	Generated texture id:[3] width:[1024] height:[1024]
+2024-12-16 21:41:55.532 INFO: com.zephyros1938.engine.graph.Mesh.<init>()	Created model with id:[2] positions:[72] texcoords:[48] indices:[36]
+2024-12-16 21:41:55.540 INFO: com.zephyros1938.engine.Engine.run()	Game engine started
+2024-12-16 21:42:18.676 INFO: com.zephyros1938.engine.Engine.cleanup()	Game engine cleanup started
+2024-12-16 21:42:18.789 INFO: com.zephyros1938.engine.Engine.run()	Game engine stopped
