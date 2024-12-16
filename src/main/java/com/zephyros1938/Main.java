@@ -1,8 +1,5 @@
 package com.zephyros1938;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.joml.Vector2f;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -14,10 +11,7 @@ import com.zephyros1938.engine.Render;
 import com.zephyros1938.engine.Scene;
 import com.zephyros1938.engine.Window;
 import com.zephyros1938.engine.Window.WindowOptions;
-import com.zephyros1938.engine.graph.Material;
-import com.zephyros1938.engine.graph.Mesh;
 import com.zephyros1938.engine.graph.Model;
-import com.zephyros1938.engine.graph.Texture;
 import com.zephyros1938.engine.scene.Camera;
 import com.zephyros1938.engine.scene.Entity;
 import com.zephyros1938.engine.scene.ModelLoader;
@@ -26,7 +20,7 @@ import com.zephyros1938.engine.scene.ModelLoader;
 
 public class Main implements IAppLogic {
 
-    private static final float MOUSE_SENSITIVITY = 0.05f;
+    private static final float MOUSE_SENSITIVITY = 0.04f;
     private static final float MOVEMENT_SPEED = 0.001f;
 
     private Entity cube_entity;

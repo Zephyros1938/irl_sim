@@ -20,7 +20,6 @@ import org.lwjgl.assimp.AIMaterial;
 import org.lwjgl.assimp.AIMesh;
 import org.lwjgl.assimp.AIScene;
 import org.lwjgl.assimp.AIString;
-import org.lwjgl.assimp.AIVector2D;
 import org.lwjgl.assimp.AIVector3D;
 import org.lwjgl.system.MemoryStack;
 
@@ -118,18 +117,27 @@ public class ModelLoader {
     }
 
     private static int[] processIndices(AIMesh ai_mesh) {
-        List<Integer> indices = new ArrayList<>();
         int num_faces = ai_mesh.mNumFaces();
+        int total_indices = 0;
         AIFace.Buffer ai_faces = ai_mesh.mFaces();
+
+        for (int i = 0; i < num_faces; i++) {
+            total_indices += ai_faces.get(i).mIndices().remaining();
+        }
+
+        int[] indices = new int[total_indices];
+        int index_pos = 0;
+
         for(int i = 0; i < num_faces; i++){
             AIFace ai_face = ai_faces.get(i);
             IntBuffer buffer = ai_face.mIndices();
             while(buffer.remaining() > 0) {
-                indices.add(buffer.get(i));
+                indices[index_pos++] = buffer.get();
             }
         }
+        ai_faces.clear();
 
-        return indices.stream().mapToInt(Integer::intValue).toArray();
+        return indices;
     }
 
     private static float[] processTexCoords(AIMesh ai_mesh) {
@@ -144,7 +152,6 @@ public class ModelLoader {
             data[pos++] = tex_coord.x();
             data[pos++] = 1 -tex_coord.y();
         }
-
         return data;
     }
 
@@ -158,7 +165,6 @@ public class ModelLoader {
             data[pos++] = tex_coord.y();
             data[pos++] = tex_coord.z();
         }
-
         return data;
     }
 }

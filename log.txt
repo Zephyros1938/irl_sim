@@ -1,6 +1,10 @@
-2024-12-16 15:53:32.558 DEBUG: com.zephyros1938.Main.main()	Window options set with name:[IRL SIM 1280x720 (16:9)] width:[1280] height:[720]
-2024-12-16 15:53:33.343 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/default.vert]
-2024-12-16 15:53:33.376 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/default.frag]
-2024-12-16 15:53:33.765 INFO: com.zephyros1938.engine.graph.Texture.generateTexture()	Generated texture id:[1] width:[4096] height:[4096]
-2024-12-16 15:53:34.232 INFO: com.zephyros1938.engine.graph.TextureCache.createTexture()	Caching texture [src/main/resources/models/cube/cube.png]
-2024-12-16 15:53:34.250 INFO: com.zephyros1938.engine.graph.Texture.generateTexture()	Generated texture id:[2] width:[1024] height:[1024]
+2024-12-16 18:14:09.370 DEBUG: com.zephyros1938.Main.main()	Window options set with name:[IRL SIM 1280x720 (16:9)] width:[1280] height:[720]
+2024-12-16 18:14:10.170 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/default.vert]
+2024-12-16 18:14:10.203 INFO: com.zephyros1938.engine.Utils.readFile()	Loading shader [src/main/resources/shaders/default.frag]
+2024-12-16 18:14:10.524 INFO: com.zephyros1938.engine.graph.Texture.generateTexture()	Generated texture id:[1] width:[4096] height:[4096]
+2024-12-16 18:14:10.993 INFO: com.zephyros1938.engine.graph.TextureCache.createTexture()	Caching texture [src/main/resources/models/cube/cube.png]
+2024-12-16 18:14:11.010 INFO: com.zephyros1938.engine.graph.Texture.generateTexture()	Generated texture id:[2] width:[1024] height:[1024]
+2024-12-16 18:14:11.033 INFO: com.zephyros1938.engine.graph.Mesh.<init>()	Created model with id:[1] positions:[72] texcoords:[48] indices:[36]
+2024-12-16 18:14:11.041 INFO: com.zephyros1938.engine.Engine.run()	Game engine started
+2024-12-16 18:14:22.207 INFO: com.zephyros1938.engine.Engine.cleanup()	Game engine cleanup started
+2024-12-16 18:14:22.247 INFO: com.zephyros1938.engine.Engine.run()	Game engine stopped
