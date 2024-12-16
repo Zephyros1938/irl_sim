@@ -37,22 +37,22 @@ public class Mesh {
             // Positions VBO
             int vbo_id = glGenBuffers();
             vbo_id_list.add(vbo_id);
-            FloatBuffer positions_buffer = stack.callocFloat(positions.length);
-            positions_buffer.put(0, positions);
+            //FloatBuffer positions_buffer = stack.callocFloat(positions.length);
+            //positions_buffer.put(0, positions);
             glBindBuffer(GL_ARRAY_BUFFER, vbo_id);
-            glBufferData(GL_ARRAY_BUFFER, positions_buffer, GL_STATIC_DRAW);
-            positions_buffer.clear();
+            glBufferData(GL_ARRAY_BUFFER, positions, GL_STATIC_DRAW);
+            //positions_buffer.clear();
             glEnableVertexAttribArray(0);
             glVertexAttribPointer(0, 3, GL_FLOAT, false, 0, 0);
 
             // TexCords VBO
             vbo_id = glGenBuffers();
             vbo_id_list.add(vbo_id);
-            FloatBuffer tex_coords_buffer = stack.callocFloat(tex_coords.length);
-            tex_coords_buffer.put(0, tex_coords);
+            //FloatBuffer tex_coords_buffer = stack.callocFloat(tex_coords.length);
+            //tex_coords_buffer.put(0, tex_coords);
             glBindBuffer(GL_ARRAY_BUFFER, vbo_id);
-            glBufferData(GL_ARRAY_BUFFER, tex_coords_buffer, GL_STATIC_DRAW);
-            tex_coords_buffer.clear();
+            glBufferData(GL_ARRAY_BUFFER, tex_coords, GL_STATIC_DRAW);
+            //tex_coords_buffer.clear();
             glEnableVertexAttribArray(1);
             glVertexAttribPointer(1, 2, GL_FLOAT, false, 0, 0); // MAKE SURE THE SIZE IS 2, I SPENT 30 MINUTES TRYING TO
                                                                 // MAP TEXTURE COORDS JUST TO FIND THAT SIZE WAS 3
@@ -62,11 +62,11 @@ public class Mesh {
             // Indices VBO
             vbo_id = glGenBuffers();
             vbo_id_list.add(vbo_id);
-            IntBuffer indices_buffer = stack.callocInt(indices.length);
-            indices_buffer.put(0, indices);
+            //IntBuffer indices_buffer = stack.callocInt(indices.length);
+            //indices_buffer.put(0, indices);
             glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vbo_id);
-            glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices_buffer, GL_STATIC_DRAW);
-            indices_buffer.clear();
+            glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices, GL_STATIC_DRAW);
+            //indices_buffer.clear();
 
             glBindBuffer(GL_ARRAY_BUFFER, 0);
             glBindVertexArray(0);

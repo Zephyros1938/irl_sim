@@ -51,11 +51,12 @@ public class Main implements IAppLogic {
 
     @Override
     public void init(Window window, Scene scene, Render render) {
-        Model cube_model = ModelLoader.loadModel("cube_model", "src/main/resources/models/cube/cube.obj", scene.getTextureCache());
+        Model cube_model = ModelLoader.loadModel("cube_model", "src/main/resources/models/teapot/teapot.obj", scene.getTextureCache());
         scene.addModel(cube_model);
 
         cube_entity = new Entity("cube_entity", cube_model.getId());
         cube_entity.setPosition(0, 0, -2);
+        cube_entity.setScale(0.1f);
         scene.addEntity(cube_entity);
     }
 
