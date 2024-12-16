@@ -4,10 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.joml.Matrix4f;
+import org.joml.Vector4f;
 import org.lwjgl.system.MemoryStack;
 
 import static org.lwjgl.opengl.GL20.glGetUniformLocation;
 import static org.lwjgl.opengl.GL20.glUniform1i;
+import static org.lwjgl.opengl.GL20.glUniform4f;
 import static org.lwjgl.opengl.GL20.glUniformMatrix4fv;
 
 public class UniformsMap {
@@ -48,5 +50,9 @@ public class UniformsMap {
         try (MemoryStack stack = MemoryStack.stackPush()) {
             glUniformMatrix4fv(getUniformLocation(uniform_name), false, value.get(stack.mallocFloat(16)));
         }
+    }
+
+    public void setUniform(String uniform_name, Vector4f value) {
+        glUniform4f(getUniformLocation(uniform_name), value.x, value.y, value.z, value.w);
     }
 }

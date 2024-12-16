@@ -26,6 +26,8 @@ public class SceneRender {
                         GL_FRAGMENT_SHADER));
         shader_program = new ShaderProgram(shader_module_data_list);
         createUniforms();
+
+        uniforms_map.createUniform("material.diffuse");
     }
 
     public void cleanup() {
@@ -53,6 +55,7 @@ public class SceneRender {
             List<Entity> entities = model.getEntitiesList();
 
             for (Material material : model.getMaterialList()) {
+                uniforms_map.setUniform("material.diffuse", material.getDiffuseColor());
                 Texture texture = texture_cache.getTexture(material.getTexturePath());
                 glActiveTexture(GL_TEXTURE0);
                 texture.bind();
