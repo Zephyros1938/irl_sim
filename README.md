@@ -7,3 +7,7 @@ Meant to be annoyingly tedious to play, high learning curve.
 ## Development Team
 - Zephyros1939
 - PiffleVariety
+
+# License
+
+License can be read [here](LICENSE) for more information.
